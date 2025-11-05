@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "iPad, 128GB Wi-Fi (A16 chip)",
+  "image": "https://bfasset.costco-static.com/U447IH35/as/5zttpv473bmqrn33xnmj5z/4000285678-847_blue_1?auto=webp&format=jpg",
+  "description": "iPad, 128GB Wi-Fi (A16 chip), The 11-Inch iPad Is Now More Capable Than Ever With the Superfast A16 Chip, Liquid Retina Display, Advanced Cameras, Fast Wi-Fi 6, USB-C Connector, and Four Gorgeous Colors,  iPad Delivers a Powerful Way to Create, Stay Connected, and Get Things Done—All for a Surprisingly Affordable Price.",
+  "sku": "",
+  "url": "https://www.costco.com/ipad-128gb-wi-fi-a16-chip.product.4000285678.html",
+  "brand": {
+    "@type": "Brand",
+    "name": "Apple"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 4.37,
+    "ratingCount": 19
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.costco.com/ipad-128gb-wi-fi-a16-chip.product.4000285678.html",
+    "availability": "https://schema.org/OutOfStock",
+    "priceCurrency": "USD",
+    "price": 1
+  }
+}

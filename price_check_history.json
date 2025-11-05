@@ -1,0 +1,39 @@
+[
+  {
+    "timestamp": "2025-11-05T23:47:32.012878",
+    "product": "iPad, 128GB Wi-Fi (A16 chip)",
+    "price": 299.99,
+    "threshold": 300.0,
+    "alert_triggered": true
+  },
+  {
+    "timestamp": "2025-11-05T23:53:27.381726",
+    "product": "iPad, 128GB Wi-Fi (A16 chip)",
+    "price": 299.99,
+    "threshold": 300.0,
+    "alert_triggered": true
+  },
+  {
+    "timestamp": "2025-11-05T23:57:05.998330",
+    "product": "AirPods 4 with Active Noise Cancellation",
+    "price": 149.99,
+    "threshold": 150.0,
+    "alert_triggered": true,
+    "valid_through": "2025-11-06"
+  },
+  {
+    "timestamp": "2025-11-06T00:02:06.891934",
+    "product": "iPad, 128GB Wi-Fi (A16 chip)",
+    "price": 299.99,
+    "threshold": 299.0,
+    "alert_triggered": false
+  },
+  {
+    "timestamp": "2025-11-06T00:02:06.891960",
+    "product": "AirPods 4 with Active Noise Cancellation",
+    "price": 149.99,
+    "threshold": 149.0,
+    "alert_triggered": false,
+    "valid_through": "2025-11-06"
+  }
+]

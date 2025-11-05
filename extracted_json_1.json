@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 0,
+      "name": "Home",
+      "item": "https://www.costco.comhttps://www.costco.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Computers",
+      "item": "https://www.costco.com/computers.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "iPad & Tablets",
+      "item": "https://www.costco.com/tablet-computers-accessories.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "iPad",
+      "item": "https://www.costco.com/ipad.html"
+    }
+  ]
+}

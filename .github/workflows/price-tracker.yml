@@ -1,0 +1,56 @@
+name: Costco Price Tracker
+
+on:
+  schedule:
+    # Run every 2 hours to catch price drops quickly
+    - cron: '0 */2 * * *'
+  workflow_dispatch:  # Allow manual trigger
+  push:
+    branches: [ main ]
+    paths:
+      - 'config.json'
+      - 'playwright_price_checker.py'
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  track-prices:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Run price tracker
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_REPOSITORY: ${{ github.repository }}
+      run: python playwright_price_checker.py
+      
+    - name: Commit price history changes
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add price_history.json
+        git diff --quiet && git diff --staged --quiet || git commit -m "Update price history - $(date +'%Y-%m-%d %H:%M:%S')"
+        
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}

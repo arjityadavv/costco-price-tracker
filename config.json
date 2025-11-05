@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "name": "iPad A16 (128GB Wi-Fi)",
+      "search_term": "ipad a16",
+      "price_threshold": 299.00,
+      "url": "https://www.costco.com/ipad-128gb-wi-fi-a16-chip.product.4000285678.html",
+      "item_id": "4000285678"
+    },
+    {
+      "name": "AirPods 4 with Active Noise Cancellation",
+      "search_term": "airpods 4 anc",
+      "price_threshold": 149.00,
+      "url": "https://www.costco.com/airpods-4-with-active-noise-cancellation.product.4000308504.html",
+      "item_id": "4000308504"
+    }
+  ],
+  "notification": {
+    "enabled": true,
+    "method": "github_issue"
+  }
+}
