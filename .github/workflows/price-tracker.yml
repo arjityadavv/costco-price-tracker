@@ -1,15 +1,15 @@
 name: Costco Price Tracker
 
 on:
-  schedule:
-    # Run every 2 hours to catch price drops quickly
-    - cron: '0 */2 * * *'
-  workflow_dispatch:  # Allow manual trigger
-  push:
-    branches: [ main ]
-    paths:
-      - 'config.json'
-      - 'playwright_price_checker.py'
+  workflow_dispatch:  # Allow manual trigger only
+  # schedule:
+  #   # Run every 2 hours to catch price drops quickly
+  #   - cron: '0 */2 * * *'
+  # push:
+  #   branches: [ main ]
+  #   paths:
+  #     - 'config.json'
+  #     - 'playwright_price_checker.py'
 
 permissions:
   contents: write
