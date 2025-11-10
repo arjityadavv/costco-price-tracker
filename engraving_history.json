@@ -1,0 +1,14 @@
+{
+  "BQ3908": {
+    "product_name": "Colleen Three-Hand Two-Tone Stainless Steel Watch",
+    "checks": [
+      {
+        "available": null,
+        "message": "Error: 403 Client Error: Forbidden for url: https://www.fossil.com/en-us/products/colleen-three-hand-two-tone-stainless-steel-watch/BQ3908.html",
+        "timestamp": "2025-11-10T23:38:37.376037"
+      }
+    ],
+    "last_checked": "2025-11-10T23:38:37.376037",
+    "currently_available": null
+  }
+}

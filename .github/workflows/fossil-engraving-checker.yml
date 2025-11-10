@@ -1,0 +1,53 @@
+name: Fossil Engraving Checker
+
+on:
+  schedule:
+    # Run every 6 hours to check engraving availability
+    - cron: '0 */6 * * *'
+  workflow_dispatch:  # Allow manual trigger
+  push:
+    branches: [ main ]
+    paths:
+      - 'fossil_config.json'
+      - 'fossil_engraving_checker.py'
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  check-engraving:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests beautifulsoup4
+        
+    - name: Check engraving availability
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_REPOSITORY: ${{ github.repository }}
+      run: python fossil_engraving_checker.py
+      
+    - name: Commit history changes
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add engraving_history.json
+        git diff --quiet && git diff --staged --quiet || git commit -m "Update engraving history - $(date +'%Y-%m-%d %H:%M:%S')"
+        
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
