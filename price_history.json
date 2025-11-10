@@ -11,16 +11,16 @@
   },
   "4000285678": {
     "name": "iPad A16 (128GB Wi-Fi)",
-    "price": 299.99,
+    "price": 329.99,
     "threshold": 299.0,
-    "last_checked": "2025-11-06T00:15:27.264248",
+    "last_checked": "2025-11-10T12:00:00.000000",
     "alert_triggered": false
   },
   "4000308504": {
     "name": "AirPods 4 with Active Noise Cancellation",
-    "price": 149.99,
+    "price": 148.99,
     "threshold": 149.0,
-    "last_checked": "2025-11-06T00:15:27.264584",
+    "last_checked": "2025-11-10T12:00:00.000000",
     "alert_triggered": false
   }
 }

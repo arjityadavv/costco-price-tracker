@@ -2,11 +2,16 @@
 """
 Costco Price Checker using Web Scraping
 This script checks Costco prices by scraping product pages and creates GitHub issues for alerts.
+
+Exit Codes:
+- 0: No price alerts (all prices above threshold) - workflow passes
+- 1: Price alert triggered (price at/below threshold) - workflow fails to send notification
 """
 
 import json
 import os
 import re
+import sys
 from datetime import datetime
 from pathlib import Path
 
@@ -231,6 +236,17 @@ def check_prices():
     print("\n" + "=" * 80)
     print(f"Check Complete: {alerts_triggered} new alerts triggered")
     print("=" * 80 + "\n")
+    
+    # Exit with error code 1 if any alerts were triggered (to fail the workflow)
+    # Exit with code 0 if no alerts (workflow passes)
+    if alerts_triggered > 0:
+        print("🚨 EXITING WITH ERROR CODE 1 - Price alert(s) triggered!")
+        print("   GitHub Actions will fail and send you an email notification.")
+        sys.exit(1)
+    else:
+        print("✅ EXITING WITH CODE 0 - No price alerts.")
+        print("   All prices are above your thresholds.")
+        sys.exit(0)
 
 
 if __name__ == "__main__":
